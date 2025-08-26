@@ -30,24 +30,24 @@ Github：[https://github.com/tiagorangel1/cap](https://github.com/tiagorangel1/c
 <li>配置伪静态
 
 ```Nginx
-    location / {
-        try_files $uri $uri/ $uri.php?$query_string;
-        if ($request_filename ~* .*\.php$) {
-            return 403;
-        }
+location / {
+    try_files $uri $uri/ $uri.php?$query_string;
+    if ($request_filename ~* .*\.php$) {
+        return 403;
     }
+}
 ```
 
 </li>
 <li>将Cap-Pow接口换成您的Cap-Pow Server for PHP
 
 ```html
-    <script src="https://cdn.jsdelivr.net/npm/@cap.js/widget"></script>
+<script src="https://cdn.jsdelivr.net/npm/@cap.js/widget"></script>
 
-    <cap-widget
-        id="cap"
-        data-cap-api-endpoint="https://<your cap endpoint>"
-    ></cap-widget>
+<cap-widget
+    id="cap"
+    data-cap-api-endpoint="https://<your cap endpoint>"
+></cap-widget>
 ```
 </li>
 <li>恭喜你，您已经成功安装并配置好了Cap-Pow！</li>
@@ -66,35 +66,35 @@ Github：[https://github.com/tiagorangel1/cap](https://github.com/tiagorangel1/c
 您也可以通过构造时传入自定义参数，例如：
 
 ```php
-    /**
-     * cap.php
-     */
-    $config = [
-        'db_Driver' => '.data/cap.db',
-        'c' => 32,
-        's' => 64,
-        'd' => 4
-    ];
-    $cap = new Cap($config);
+/**
+ * cap.php
+ */
+$config = [
+    'db_Driver' => '.data/cap.db',
+    'c' => 32,
+    's' => 64,
+    'd' => 4
+];
+$cap = new Cap($config);
 ```
 
 您在生成挑战时也能通过传入参数更改默认的计算难度和挑战超时时间，例如：
 
 ```php
-    /**
-     * challenge.php
-     */
-    $cap = new Cap();
-    // 挑战难度
-    $challenge = [
-        'c' => 32,
-        's' => 64,
-        'd' => 4
-    ];
-    // 单位：秒
-    $expires = 60;
-    // 传入自定义参数
-    $cap->createChallenge($challenge, $expires);
+/**
+ * challenge.php
+ */
+$cap = new Cap();
+// 挑战难度
+$challenge = [
+    'c' => 32,
+    's' => 64,
+    'd' => 4
+];
+// 单位：秒
+$expires = 60;
+// 传入自定义参数
+$cap->createChallenge($challenge, $expires);
 ```
 
 ## 其它

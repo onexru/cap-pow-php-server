@@ -4,19 +4,22 @@
 
 本项目由 [初春网络](https://www.cv0.cn) 小森开发，在 [雾创岛](https://www.tr0.cn) 发布，基于[Cap-Pow](https://github.com/tiagorangel1/cap)项目的一个分支。
 
-
 弥补了Cap-Pow Server官方版本不支持世界上最好的语言PHP的遗憾。
 
 **原Cap-Pow项目地址：**
+
 Github：[https://github.com/tiagorangel1/cap](https://github.com/tiagorangel1/cap)
+
 官网：[https://capjs.js.org](https://capjs.js.org)
 
 **本项目Dome**
+
 [https://cha.eta.im/cap](https://cha.eta.im/cap)
 
 ## 使用说明
 
 **服务端环境**
+
 <ul>
     <li>推荐使用 Nginx</li>
     <li>推荐PHP版本：8.0+</li>
@@ -24,6 +27,7 @@ Github：[https://github.com/tiagorangel1/cap](https://github.com/tiagorangel1/c
 </ul>
 
 **安装**
+
 <ol>
 <li>下载Cap-Pow Server for PHP源码</li>
 <li>上传至网站目录</li>
@@ -56,6 +60,7 @@ location / {
 ## 自定义
 
 您可以修改cap.php对以下内容自定义：
+
 <ol>
 <li>$db_Driver => 数据库文件存放位置（以“.db”结尾）</li>
 <li>$c => 运算次数，默认64</li>
@@ -104,6 +109,7 @@ $cap->createChallenge($challenge, $expires);
 如果您不想自己部署或有更高的安全需求，您也可以使用我的另外一个分支：[One-Pow](https://cha.eta.im)
 
 **One-Pow 优化项目**
+
 <ol>
 <li>更新了更好看的组件UI和交互动画</li>
 <li>FNV-1a 算法由32位换为128位</li>

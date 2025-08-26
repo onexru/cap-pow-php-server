@@ -53,6 +53,50 @@ Github：[https://github.com/tiagorangel1/cap](https://github.com/tiagorangel1/c
 <li>恭喜你，您已经成功安装并配置好了Cap-Pow！</li>
 </ol>
 
+## 自定义
+
+您可以修改cap.php对以下内容自定义：
+<ol>
+<li>$db_Driver => 数据库文件存放位置（以“.db”结尾）</li>
+<li>$c => 运算次数，默认64</li>
+<li>$s => 每次运算长度，默认128</li>
+<li>$d => 运算难度，默认4</li>
+</ol>
+
+您也可以通过构造时传入自定义参数，例如：
+
+```php
+    /**
+     * cap.php
+     */
+    $config = [
+        'db_Driver' => '.data/cap.db',
+        'c' => 32,
+        's' => 64,
+        'd' => 4
+    ];
+    $cap = new Cap($config);
+```
+
+您在生成挑战时也能通过传入参数更改默认的计算难度和挑战超时时间，例如：
+
+```php
+    /**
+     * challenge.php
+     */
+    $cap = new Cap();
+    // 挑战难度
+    $challenge = [
+        'c' => 32,
+        's' => 64,
+        'd' => 4
+    ];
+    // 单位：秒
+    $expires = 60;
+    // 传入自定义参数
+    $cap->createChallenge($challenge, $expires);
+```
+
 ## 其它
 
 您可以任意的修改此项目、分支、发布。

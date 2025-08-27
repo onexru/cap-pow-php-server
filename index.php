@@ -9,7 +9,7 @@
 <body>
     <cap-widget
         id="cap"
-        data-cap-api-endpoint="https://sqvq.cn/cs/"
+        data-cap-api-endpoint="https://cha.eta.im/cap/"
     ></cap-widget>
 </body>
 </html>
